@@ -80,8 +80,8 @@ public class STexturedProgressBar extends AbstractProgressBar {
             // Getting the sub image of the foreground
             BufferedImage subForeground = foregroundTexture.getSubimage(0, 0, isVertical() ? this.getWidth() : fgSize, isVertical() ? fgSize : this.getHeight());
 
-            // Then drawing it
-            g.drawImage(subForeground, 0, 0, subForeground.getWidth(), subForeground.getHeight(), this);
+            // Then drawing it || Fix STexturedProgressBar
+			g.drawImage(subForeground, 0, 0, subForeground.getWidth() + (subForeground.getWidth() * 22/100), subForeground.getHeight(), this);
         }
 
         // If the string is painted and the string isn't null
